@@ -1,0 +1,159 @@
+/* landing-page.component.css */
+h1 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+
+.landing-banner {
+  /* background: linear-gradient(to bottom, #333333, #bd930c); /* Gradient colors */
+
+  background-image: url('../../../../assets/images/bg-lion.jpg'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire element with the image */
+  background-attachment: fixed; /* Fix the background image */
+  background-position: center; /* Center the image within the element */
+  text-align: center;
+  padding: 100px 0;
+  color: white;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-banner h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-OG {
+  background: linear-gradient(#ffbb00, #dd681a);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn-OG:hover {
+  background: linear-gradient(#dd681a, #ffbb00); /* Darker gradient on hover */
+}
+
+.page-content {
+  background-color: #f2f2f2; /* Greyish background for the rest of the page */
+  padding: 20px;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 20px 0;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  /* Other styles as needed */
+}
+
+
+.profile-section {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.profile-section img {
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  border-radius: 50%; /* Makes the image circular if desired */
+}
+
+
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.live-stream-indicator {
+  animation: flash 1.5s infinite;
+  color: red;
+  font-size: 24px;
+  display: inline-block;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

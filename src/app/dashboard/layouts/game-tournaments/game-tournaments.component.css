@@ -1,0 +1,20 @@
+/* Adjust card styles as needed */
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.card {
+  flex: 0 0 calc(33.333% - 20px); /* Adjust the width as needed */
+  max-width: calc(33.333% - 20px); /* Adjust the width as needed */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}

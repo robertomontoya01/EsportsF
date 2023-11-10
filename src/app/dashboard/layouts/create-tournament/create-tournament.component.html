@@ -1,0 +1,173 @@
+<div class="bg-dark text-light p-5 title-banner">
+  <h1 class="text-center title">Crear Torneo</h1>
+</div>
+
+<div class=" bg-black min-vh-100 d-flex flex-column">
+  <button class="btn btn-link ml-3 mt-3 position-absolute text-light" style="top: 0; left: 0;" routerLink="/previous-page">
+    <i class="fa fa-arrow-left"></i> Volver
+  </button>
+
+  <div class="col-md-6 mt-3 mx-auto">
+    <form [formGroup]="tournamentForm" (ngSubmit)="onSubmit()" class="p-4 rounded text-light custom-shadow">
+
+      <div class="row">
+
+        <div class="col">
+          <div class="form-group">
+            <label for="tournamentName">Nombre del Torneo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tournamentName"
+              formControlName="tournamentName"
+              placeholder="Ingrese el Nombre del Torneo"
+            />
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="form-group">
+            <label for="gameTitle">Título del Juego</label>
+            <input
+              type="text"
+              class="form-control"
+              id="gameTitle"
+              formControlName="gameTitle"
+              placeholder="Ingrese el Título del Juego"
+            />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <!-- Add the Formato del Torneo input -->
+          <div class="form-group">
+            <label for="tournamentFormat">Formato del Torneo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tournamentFormat"
+              formControlName="tournamentFormat"
+              placeholder="Ingrese el Formato del Torneo"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <!-- Add the Location del Torneo input -->
+          <div class="form-group">
+            <label for="tournamentFormat">Ubicacion</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tournamentFormat"
+              formControlName="location"
+              placeholder="Ingrese la ubicacion del Torneo"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col">
+          <div class="form-group">
+            <label for="date">Fecha de Inicio</label>
+            <input
+              type="date"
+              class="form-control"
+              id="date"
+              formControlName="date"
+            />
+          </div>
+
+          <!-- Agrega el checkbox para "Torneo dura un solo día" -->
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="singleDayTournament"
+              formControlName="singleDayTournament"
+            />
+            <label class="form-check-label" for="singleDayTournament">Torneo dura un solo día</label>
+          </div>
+
+        </div>
+
+        <div class="col">
+          <!-- Agrega el campo "Fecha de Fin" y utiliza *ngIf para mostrarlo si el checkbox no está marcado -->
+          <div class="form-group" *ngIf="!tournamentForm.get('singleDayTournament')?.value">
+            <label for="endDate">Fecha de Fin</label>
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              formControlName="endDate"
+            />
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Add the Descripcion del Torneo input -->
+      <div class="form-group">
+        <label for="tournamentDescription">Descripcion del Torneo</label>
+        <textarea
+          class="form-control"
+          id="tournamentDescription"
+          formControlName="tournamentDescription"
+          rows="4"
+          placeholder="Ingrese la Descripcion del Torneo"
+        ></textarea>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="registrationType">Tipo de Registro</label>
+          <select class="form-control" id="registrationType" formControlName="registrationType" (change)="onRegistrationTypeChange($event.target)">
+            <option value="individual">Individual</option>
+            <option value="manual">Manual</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Campo para el número máximo de jugadores (oculto inicialmente) -->
+        <div class="form-group" *ngIf="tournamentForm.get('registrationType')?.value === 'individual'">
+          <label for="maxPlayers">Máximo de Jugadores</label>
+          <input
+            type="number"
+            class="form-control"
+            id="maxPlayers"
+            formControlName="maxPlayers"
+          />
+        </div>
+
+        <!-- Campo para instrucciones de registro manual (oculto inicialmente) -->
+        <div class="form-group" *ngIf="tournamentForm.get('registrationType')?.value === 'manual'">
+          <label for="manualInstructions">Instrucciones de Registro Manual</label>
+          <textarea
+            class="form-control"
+            id="manualInstructions"
+            formControlName="manualInstructions"
+            rows="4"
+            placeholder="Escribe el nombre y correo de cada jugador, un jugador por línea."
+          ></textarea>
+        </div>
+      </div>
+
+
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg btn-block mt-4"
+        [disabled]="tournamentForm.invalid"
+      >
+        Crear Torneo
+      </button>
+    </form>
+  </div>
+</div>

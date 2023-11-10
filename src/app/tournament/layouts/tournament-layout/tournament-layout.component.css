@@ -1,0 +1,80 @@
+.header {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+.menu li.active {
+  background-color: #bd930c; /* Set the background color for the selected menu item */
+}
+
+.content {
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.title-banner {
+  background: linear-gradient(to top, #000, #bd930c);
+  text-align: center;
+  padding: 1px 0;
+  color: white;
+}
+
+.title {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.btn-outline-primary {
+  border-color: #bd930c;
+  color: #bd930c;
+}
+
+.btn-outline-primary:hover {
+  background-color: #bd930c;
+  border-color: #bd930c;
+  color: white;
+}
+
+.btn-clicked {
+  background-color: #bd930c; /* Change the background color to blue */
+  color: white; /* Change the text color to white */
+}

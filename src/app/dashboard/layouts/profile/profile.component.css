@@ -1,0 +1,33 @@
+.title-banner {
+  background: linear-gradient(to top, #000, #bd930c); /* Gradient colors */
+  text-align: center;
+  padding: 100px 0;
+  color: white;
+  /*  animation: fadeInUp 0.5s ease; */
+}
+
+.title{
+  font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .btn-outline-danger {
+  border-color: #bd930c;
+  color: #bd930c;
+}
+
+.btn-outline-danger:hover {
+  background-color: #bd930c;
+  border-color: #bd930c;
+  color: white;
+} */

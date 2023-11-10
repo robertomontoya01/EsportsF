@@ -1,0 +1,7 @@
+/* Add your custom styles here */
+img.img-thumbnail {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* You can add more custom styling as needed */

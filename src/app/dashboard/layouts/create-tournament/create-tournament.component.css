@@ -1,0 +1,46 @@
+.title-banner {
+  background: linear-gradient(to top, #000, #bd930c); /* Gradient colors */
+  text-align: center;
+  padding: 100px 0;
+  color: white;
+  /*  animation: fadeInUp 0.5s ease; */
+}
+
+.title{
+  font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-shadow {
+  box-shadow: 0 0 5px gray; /* Adjust shadow size and color here */
+}
+
+.btn-primary {
+  background: linear-gradient(#ffbb00, #bd930c);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(#bd930c, #ffbb00); /* Darker gradient on hover */
+}
+
+:checked {
+  background-color: #ffbb00;
+  border-color: #ffbb00;
+}

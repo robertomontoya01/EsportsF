@@ -1,0 +1,35 @@
+<div class="bg-dark text-light p-5 title-banner">
+  <h1 class="text-center title">Perfil</h1>
+</div>
+
+<div class="bg-black min-vh-100 d-flex flex-column">
+
+  <button class="btn btn-link ml-3 mt-3 position-absolute text-light" style="top: 0; left: 0;" routerLink="/previous-page">
+    <i class="fa fa-arrow-left"></i> Volver
+  </button>
+
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card bg-black custom-shadow text-white">
+          <div class="card-body">
+            <!-- Profile Picture on the Left -->
+            <div class="d-flex">
+              <img src="assets/images/user-icon.png" alt="Profile Picture" class="rounded-circle mr-4" style="width: 200px; height: 200px;">
+              <div class="text-light">
+                <!-- User Information -->
+                <h1 class="card-title">{{ user()?.name }}</h1>
+                <!-- <p class="text-light" ><strong>Nombre:</strong> {{ user()?.name }}</p> -->
+                <p class="text-light"><strong>Correo:</strong> {{ user()?.email }}</p>
+                <p class="text-light"><strong>Escuela:</strong> CUCEI</p>
+                <p class="text-light"><strong>Interests:</strong> Coding, Traveling, Photography</p>
+                <button type="button" class="btn btn-outline-danger" (click)="onLogout()" >Cerrar Sesion</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

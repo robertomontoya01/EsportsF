@@ -1,0 +1,54 @@
+<div class="bg-dark text-light p-5 title-banner">
+  <h1 class="text-center title">Buscar Evento</h1>
+</div>
+
+<div class=" bg-black min-vh-100 d-flex flex-column text-light">
+  <button class="btn btn-link ml-3 mt-3 position-absolute text-light" style="top: 0; left: 0;" routerLink="/previous-page">
+    <i class="fa fa-arrow-left"></i> Volver
+  </button>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <!-- Search bar -->
+        <form [formGroup]="searchForm" (ngSubmit)="search()">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="searchTerm"
+            placeholder="Busca un juego o torneo"
+          />
+        </form>
+
+
+        <!-- Games section -->
+        <h2 class="mt-2">Juegos</h2>
+        <div class="row">
+          <div class="col-4" *ngFor="let game of filteredGames">
+            <!-- Game card -->
+            <div class="card">
+              <img [src]="game.imageUrl" alt="{{ game.title }}" />
+              <h3>{{ game.title }}</h3>
+              <p>{{ game.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tournaments section -->
+        <h2 class="mt-2">Torneos</h2>
+        <div class="row">
+          <div class="col-4" *ngFor="let tournament of filteredTournaments">
+            <!-- Tournament card -->
+            <div class="card">
+              <img [src]="tournament.imageUrl" alt="{{ tournament.title }}" />
+              <h3>{{ tournament.title }}</h3>
+              <p>{{ tournament.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

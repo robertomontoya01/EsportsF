@@ -1,0 +1,36 @@
+<div class="bg-dark text-light p-5 title-banner">
+  <h1 class="text-center title">Torneos de Juego X</h1>
+</div>
+
+<div class=" bg-black min-vh-100 d-flex flex-column">
+  <button class="btn btn-link ml-3 mt-3 position-absolute text-light" style="top: 0; left: 0;" routerLink="/previous-page">
+    <i class="fa fa-arrow-left"></i> Volver
+  </button>
+
+
+  <div class="container text-white mt-4 mb-4">
+    <h2>Siguientes Torneos</h2>
+    <div class="card-deck">
+      <div class="card" (click)="gotoRoute('/tournament')" *ngFor="let tournament of upcomingTournaments">
+        <img src="assets/images/tournament2.jpg" class="card-img-top" alt="{{ tournament.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ tournament.title }}</h5>
+          <p class="card-text">Date: {{ tournament.date }}</p>
+          <p class="card-text">Game: {{ tournament.game }}</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-5" >Torneos Pasados</h2>
+    <div class="card-deck">
+      <div class="card" *ngFor="let tournament of oldTournaments">
+        <img src="assets/images/tournament2.jpg" class="card-img-top" alt="{{ tournament.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ tournament.title }}</h5>
+          <p class="card-text">Date: {{ tournament.date }}</p>
+          <p class="card-text">Game: {{ tournament.game }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

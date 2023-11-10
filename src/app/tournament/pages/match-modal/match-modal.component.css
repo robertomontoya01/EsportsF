@@ -1,0 +1,21 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.btn-primary {
+  background: linear-gradient(#ffbb00, #bd930c);
+  color: white;
+  border-color: #bd930c;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(#bd930c, #ffbb00); /* Darker gradient on hover */
+}

@@ -1,0 +1,65 @@
+<div class="bg-black">
+  <div class="landing-banner">
+    <h1>Liga Leones Negros</h1>
+    <div class="buttons">
+      <button class="btn-OG" (click)="goToCreateTournament()" >Crear Torneo</button>
+      <button class="btn-OG" routerLink="/dashboard/search" >Busca un Evento</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="profile-section">
+  <ng-container *ngIf="status() === 'authenticated'; else signInButton">
+    <img
+      src="assets/images/user-icon.png"
+      alt="Profile Image"
+      (click)="goToProfile()"
+    />
+  </ng-container>
+
+  <ng-template #signInButton>
+    <button class="text-light mx-3 " (click)="gotoRoute('/auth/login')">Sign In</button>
+  </ng-template>
+
+</div>
+
+
+<div class="page-content bg-black-gold text-light">
+
+
+  <div [ngClass]="{'hidden': !isStreaming}" class="m-4" >
+    <h2>En Vivo
+    <div class="live-stream-indicator">
+      <i class="fa fa-circle"></i>
+    </div>
+  </h2>
+    <div id="twitch-player" class="text-center" ></div>
+
+  </div>
+
+  <div class="m-4" >
+    <h2>Juegos</h2>
+    <div class="slider">
+      <div class="card" (click)="gotoRoute('/dashboard/game')" *ngFor="let game of games">
+        <img [src]="game.imageUrl" alt="{{ game.title }}" />
+        <h3 class="p-2" >{{ game.title }}</h3>
+        <p class="p-2">{{ game.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-4">
+
+    <h2>Torneos</h2>
+    <div class="slider">
+      <div class="card" (click)="gotoRoute('/tournament')" *ngFor="let tournament of tournaments">
+        <img [src]="tournament.imageUrl" alt="{{ tournament.title }}" />
+        <h3 class="p-2" >{{ tournament.title }}</h3>
+        <p class="p-2">{{ tournament.game }}</p>
+        <p class="p-2">Date: {{ tournament.date }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

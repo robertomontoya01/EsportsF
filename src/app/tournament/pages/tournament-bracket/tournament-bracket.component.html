@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="tournament-bracket tournament-bracket--rounded">
+
+    <div class="tournament-bracket__round tournament-bracket__round" *ngFor="let round of rounds; index as roundNum">
+      <h3 class="tournament-bracket__round-title">Round {{ round.round_number }}</h3>
+      <ul class="tournament-bracket__list">
+        <li class="tournament-bracket__item" *ngFor="let match of round.matches" >
+          <div class="tournament-bracket__match" tabindex="0" (click)="openModal(match)">
+            <table class="tournament-bracket__table">
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody class="tournament-bracket__content">
+                <tr class="tournament-bracket__team" [ngClass]="{'tournament-bracket__team--winner': match.results.participant1.winner}">
+                  <td class="tournament-bracket__country">
+                    <abbr class="tournament-bracket__code">{{ match.participants.participant1.name }}</abbr>
+                    <i class="fa fa-duotone fa-user"></i>
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number">{{ match.results.participant1.score }}</span>
+                    <!-- Mostrar el Trofeo si es el ultimo round y el color correcto -->
+                    <div *ngIf="roundNum+1 == (rounds?.length)">
+                      <span [ngClass]="match.results.participant1.winner ? 'tournament-bracket__medal--gold' : 'tournament-bracket__medal--silver'"
+                      class="tournament-bracket__medal fa fa-trophy"
+                      aria-label="silver medal"></span>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="tournament-bracket__team" [ngClass]="{'tournament-bracket__team--winner': match.results.participant2.winner}">
+                  <td class="tournament-bracket__country">
+                    <abbr class="tournament-bracket__code">{{match.participants.participant2.name}}</abbr>
+                    <i class="fa fa-duotone fa-user"></i>
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number">{{ match.results.participant2.score }}</span>
+                    <!-- Mostrar el Trofeo si es el ultimo round y el color correcto -->
+                    <div *ngIf="roundNum+1 == (rounds?.length)">
+                      <span [ngClass]="match.results.participant2.winner ? 'tournament-bracket__medal--gold' : 'tournament-bracket__medal--silver'"
+                      class="tournament-bracket__medal fa fa-trophy"
+                      aria-label="silver medal"></span>
+
+                      <!-- Bronze? -->
+                      <!-- <span class="tournament-bracket__medal tournament-bracket__medal--bronze fa fa-trophy" aria-label="Bronze medal"></span> -->
+
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
