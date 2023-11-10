@@ -9,22 +9,6 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent {
 
-  private authService = inject( AuthService );
-  private router = inject( Router );
-
-
-  public user = computed( ()=> this.authService.currentUser() );
-
-  public status = computed( ()=> this.authService.authStatus() );
-
-  constructor() {
-    console.log(this.user());
-    console.log(this.status());
-  }
-
-  onLogout() {
-    this.authService.logout();
-  }
 
 
 }
