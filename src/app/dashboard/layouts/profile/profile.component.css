@@ -6,6 +6,8 @@
   /*  animation: fadeInUp 0.5s ease; */
 }
 
+
+
 .title{
   font-family: 'Press Start 2P', cursive;
 }
@@ -20,6 +22,73 @@
     transform: translateY(0);
   }
 }
+
+/*Historial de Torneos*/
+#historial_t{
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+  margin: 40px 0px 30px 0px;
+}
+
+/*Listado de torneos*/
+.torneos_lista {
+  display: flex;
+  margin: 10px 300px 10px 300px;
+  border: solid rgba(216, 200, 52, 0.562);
+  border-radius: 30px;
+  background-color: white;
+  display: flex;
+  transition: 0.7s;
+
+}
+
+.torneos_lista:hover{
+  transform: scale(1.1);
+
+}
+
+.torneos_info{
+  margin: 20px;
+  padding-right: 50px;
+}
+
+.torneos_info p{
+
+  color: black;
+  text-align: justify;
+  padding-left: 40px;
+}
+
+.torneos_lista button{
+  color: black;
+  text-align: justify;
+  margin: 0px 0px 10px 350px;
+  background-color: rgb(216, 80, 80);
+}
+
+.game_icon{
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 40px 50px ;
+  border-radius: 15px;
+
+}
+
+.fecha_torneo{
+  width: auto;
+  height: 20px;
+  margin: 20px;
+  padding-left: 300px;
+}
+
+.fecha_torneo p{
+  color: black;
+  font-size: large;
+}
+
+
 
 /* .btn-outline-danger {
   border-color: #bd930c;

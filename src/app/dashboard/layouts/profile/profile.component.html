@@ -18,7 +18,7 @@
               <img src="assets/images/user-icon.png" alt="Profile Picture" class="rounded-circle mr-4" style="width: 200px; height: 200px;">
               <div class="text-light">
                 <!-- User Information -->
-                <h1 class="card-title"> Carlitos </h1>
+                <h2 class="card-title"> Carlitos </h2>
                 <!-- <p class="text-light" ><strong>Nombre:</strong> {{ user()?.name }}</p> -->
                 <p class="text-light"><strong>Correo:</strong> Holagmail.com </p>
                 <p class="text-light"><strong>Escuela:</strong> CUCEI</p>
@@ -29,6 +29,26 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!--Historial de partidas del jugador-->
+
+  <div>
+    <h1 id="historial_t">Historial de Torneos</h1>
+  </div>
+
+  <div class="torneos_lista" *ngFor="let item of TournamentsRecord" >
+    <img src="assets/images/lol_icon.jpg" class="game_icon">
+    <div class="torneos_info">
+      <h2 class="card-title">{{TournamentsRecord[0].title}}</h2>
+      <p><strong>{{TournamentsRecord[0].game}}</strong></p>
+      <p>{{TournamentsRecord[0].info}}</p>
+      <p>{{TournamentsRecord[0].data}}</p>
+      <button type="button" class="btn btn-outline-danger" >Ver torneo</button>
+    </div>
+    <div class="fecha_torneo">
+      <p>{{TournamentsRecord[0].date}}</p>
     </div>
   </div>
 
